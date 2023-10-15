@@ -11,4 +11,4 @@
 # <split_height_num>   : 4
 # <output_file>        : out/test
 #
-python translater.py asset/ferris.raw 86 64 128 128 4 4 out/test
+python translater.py asset/ferris.raw 86 64 126 126 4 4 out/test

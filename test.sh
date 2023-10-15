@@ -1,11 +1,14 @@
 #!/bin/bash
 
-# python translater.py <input_file> <width> <height> <split_width> <split_height> <ratio> <output_file>
-# input_file = asset/ferris.raw
-# width = 86
-# height = 64
-# split_width = 86
-# split_height = 64
-# ratio = 4, which means output_width = 86 * 4 = 344, output_height = 64 * 4 = 256
-# output_file = out/test
-python translater.py asset/ferris.raw 86 64 86 64 4 out/test
+# python translater.py <input_file> <original_width> <original_height> <screen_width> <screen_height> <split_width_num> <split_height_num> <output_file>")
+#
+# <input_file>         : asset/ferris.raw
+# <original_width>     : 86
+# <original_height>    : 64
+# <screen_width>       : 128
+# <screen_height>      : 128
+# <split_width_num>    : 4
+# <split_height_num>   : 4
+# <output_file>        : out/test
+#
+python translater.py asset/ferris.raw 86 64 128 128 4 4 out/test

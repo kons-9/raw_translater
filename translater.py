@@ -50,9 +50,9 @@ def zoom_int(data, width, height, ratio):
 
     # iterate through the extra data
     for i in range(extra_height):
+        original_i = i // ratio
         for j in range(extra_width):
             # find the corresponding pixel in the original data
-            original_i = i // ratio
             original_j = j // ratio
             index = (i * extra_width + j) * 2
             original_index = (original_i * width + original_j) * 2
@@ -75,10 +75,14 @@ def split(data, width, height, split_width, split_height):
     # split the data into chunks
     chunks = []
     for i in range(height_chunks):
-        index = i * split_height * width
+        chunks.append(bytearray())
+
+    for i in range(height_chunks):
+        chunk_i = i * split_height
         for j in range(width_chunks):
-            chunks.append(data[index:index + split_width * split_height])
-            index += split_width
+            chunk_j = j * split_width
+            index = (chunk_i * width + chunk_j) * 2
+            chunks[i].extend(data[index:index + split_width * 2])
 
     return chunks
 

@@ -75,14 +75,13 @@ def split(data, width, height, split_width, split_height):
     # split the data into chunks
     chunks = []
     for i in range(height_chunks):
-        chunks.append(bytearray())
-
-    for i in range(height_chunks):
-        chunk_i = i * split_height
         for j in range(width_chunks):
-            chunk_j = j * split_width
-            index = (chunk_i * width + chunk_j) * 2
-            chunks[i].extend(data[index:index + split_width * 2])
+            chunks.append(bytearray())
+
+    for i in range(height):
+        for j in range(width_chunks):
+            index = (i * width + j * split_width) * 2
+            chunks[i // split_height * width_chunks + j] += data[index:index + split_width * 2]
 
     return chunks
 

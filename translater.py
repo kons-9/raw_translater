@@ -46,7 +46,7 @@ def main():
         for i in range(split_height_num):
             for j in range(split_width_num):
                 with open(output_file + "_" + str(j) + "_" + str(i) + ".raw", "wb") as f:
-                    f.write(chunks[i * split_width_num + j])
+                    f.write(chunks[(split_height_num - i - 1) * split_width_num + j])
 
 
 def add_padding(data, width, height, target_width, target_height):

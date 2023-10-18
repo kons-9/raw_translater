@@ -11,5 +11,10 @@
 # <split_height_num>   : 4
 # <output_file>        : out/test
 #
+source venv/bin/activate
+
 mkdir -p out
+python3.10 ./PNG-to-RGB565/png2rgb565.py asset/acm.png asset/acm.raw
 python3.10 translater.py asset/acm.raw 480 480 128 128 4 4 out/test_acm
+
+deactivate

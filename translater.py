@@ -24,7 +24,7 @@ def main():
         # the total number of bytes is width * height * 2
         # the total number of bytes is len(data)
         if len(data) != original_width * original_height * 2:
-            print("Invalid file size")
+            print("Invalid file size", len(data), "expected", original_width * original_height * 2)
             return
 
         target_width = screen_width * split_width_num

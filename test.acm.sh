@@ -11,4 +11,5 @@
 # <split_height_num>   : 4
 # <output_file>        : out/test
 #
-python3.10 translater.py asset/ferris.raw 86 64 128 128 4 4 out/test
+mkdir -p out
+python3.10 translater.py asset/acm.raw 480 480 128 128 4 4 out/test_acm

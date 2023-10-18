@@ -1,0 +1,3 @@
+[submodule "png_translater"]
+	path = png_translater
+	url = https://github.com/kons-9/PNG-to-RGB565
